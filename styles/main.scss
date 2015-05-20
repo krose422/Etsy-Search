@@ -1,0 +1,43 @@
+@import "vendor/bourbon/bourbon";
+@import "vendor/neat/neat";
+
+$teal: #1692B3;
+$orange: #F2581D;
+$lightteal: #3CA8C2;
+$green: #7ABE4A;
+$gray: #B2B2B2;
+$darkgray: #555555;
+
+.globalContainer {
+  width: 100%;
+  margin: auto;
+}
+
+header {
+  @include outer-container();
+
+  .headerContent {
+    @include span-columns(10);
+    @include shift(1);
+  }
+
+  .leftHeader {
+    @include span-columns(6);
+      .logo {
+
+    img {
+      width: 80px;
+      }
+    }
+  }
+
+  .rightHeader {
+    @include span-columns(6);
+    float: right;
+    display: inline-block;
+  }
+
+
+}
+
+
