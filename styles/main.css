@@ -131,6 +131,7 @@ header .rightHeader .cart {
   margin-top: 24px;
   border-left: 1px solid #E5E5E5; }
 
+/* --------------- START MAIN HEAD INFO --------------- */
 .main {
   width: 980px;
   max-width: 68em;
@@ -187,3 +188,43 @@ li:nth-child(3n) {
 
 li:nth-child(3n+1) {
   clear: left; }
+
+.mainHead {
+  font-size: .9em;
+  margin-bottom: 15px;
+  overflow: hidden;
+  color: #555555; }
+
+.showResults {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  font-weight: bold; }
+
+.showResults:last-child {
+  margin-right: 0; }
+
+.mainInfo {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%; }
+
+.mainInfo:last-child {
+  margin-right: 0; }
+
+.mainInfo .resultsInfo {
+  float: left; }
+
+.mainInfo .resultsInfo a {
+  color: #34A8C4; }
+
+.mainInfo #searchTerm {
+  font-weight: bold; }
+
+.mainInfo .sortBy {
+  float: right; }
+
+.mainInfo .sortBy span {
+  color: #34A8C4; }
