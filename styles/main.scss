@@ -1,6 +1,8 @@
 @import "vendor/bourbon/bourbon";
 @import "vendor/neat/neat";
 
+$visual-grid: true !default;
+
 $teal: #1692B3;
 $orange: #F2581D;
 $lightteal: #3CA8C2;
@@ -8,36 +10,81 @@ $green: #7ABE4A;
 $gray: #B2B2B2;
 $darkgray: #555555;
 
-.globalContainer {
-  width: 100%;
-  margin: auto;
+body {
+  background-color: #F5F5F1;
 }
 
+// .globalContainer {
+//   width: 100%;
+//   margin: auto;
+// }
+
 header {
-  @include outer-container();
+  // @include outer-container();
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px .1px 2px $darkgray;
+  padding: 15px;
 
   .headerContent {
-    @include span-columns(10);
-    @include shift(1);
+    @include outer-container
   }
 
   .leftHeader {
-    @include span-columns(6);
-      .logo {
-
-    img {
-      width: 80px;
-      }
+    float: left;
+    .logo {
+      display: inline-block;
+      img {
+        width: 80px;
+        }
+    }
+    .searchBar {
+      display: inline-block;
+      float: right;
+      margin: auto;
     }
   }
 
   .rightHeader {
-    @include span-columns(6);
     float: right;
-    display: inline-block;
   }
 
+}
+
+.main {
+  width: 980px;
+  @include outer-container;
+  clear: both;
+  margin: 40px auto;
+
+  aside {
+    height: 500px;
+    background-color: white;
+    @include span-columns(3);
+    margin-right: 0px;
+  }
+
+  .items {
+    @include span-columns(9);
+    height: 100%;
+  }
+}
+
+ul {
+  margin: 0 auto;
+}
+
+li {
+  height: 200px;
+  margin-bottom: 20px;
+  background-color: white;
+  @include span-columns(3 of 9);
+  @include omega(3n);
+  list-style: none;
 
 }
+
+
+
 
 

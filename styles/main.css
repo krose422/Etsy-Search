@@ -6,41 +6,95 @@ html {
 *::before {
   box-sizing: inherit; }
 
-.globalContainer {
-  width: 100%;
-  margin: auto; }
+body {
+  background-color: #F5F5F1; }
 
 header {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 0.1px 2px #555555;
+  padding: 15px; }
+
+header .headerContent {
   max-width: 68em;
   margin-left: auto;
   margin-right: auto; }
-  header::after {
-    clear: both;
-    content: "";
-    display: table; }
-  header .headerContent {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
-    margin-left: 8.5298%; }
-    header .headerContent:last-child {
-      margin-right: 0; }
-  header .leftHeader {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
-    header .leftHeader:last-child {
-      margin-right: 0; }
-    header .leftHeader .logo img {
-      width: 80px; }
-  header .rightHeader {
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
-    float: right;
-    display: inline-block; }
-    header .rightHeader:last-child {
-      margin-right: 0; }
+
+header .headerContent::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+header .leftHeader {
+  float: left; }
+
+header .leftHeader .logo {
+  display: inline-block; }
+
+header .leftHeader .logo img {
+  width: 80px; }
+
+header .leftHeader .searchBar {
+  display: inline-block;
+  float: right;
+  margin: auto; }
+
+header .rightHeader {
+  float: right; }
+
+.main {
+  width: 980px;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  margin: 40px auto; }
+
+.main::after {
+  clear: both;
+  content: "";
+  display: table; }
+
+.main aside {
+  height: 500px;
+  background-color: white;
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  margin-right: 0px; }
+
+.main aside:last-child {
+  margin-right: 0; }
+
+.main .items {
+  float: left;
+  display: block;
+  margin-right: 2.35765%;
+  width: 74.41059%;
+  height: 100%; }
+
+.main .items:last-child {
+  margin-right: 0; }
+
+ul {
+  margin: 0 auto; }
+
+li {
+  height: 200px;
+  margin-bottom: 20px;
+  background-color: white;
+  float: left;
+  display: block;
+  margin-right: 3.16844%;
+  width: 31.22104%;
+  list-style: none; }
+
+li:last-child {
+  margin-right: 0; }
+
+li:nth-child(3n) {
+  margin-right: 0; }
+
+li:nth-child(3n+1) {
+  clear: left; }
