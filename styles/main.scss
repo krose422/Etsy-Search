@@ -1,53 +1,160 @@
 @import "vendor/bourbon/bourbon";
 @import "vendor/neat/neat";
 
-$visual-grid: true !default;
+/* --------------- SASS DECLARATIONS --------------- */
 
-$teal: #1692B3;
+$teal: #34A8C4;
 $orange: #F2581D;
 $lightteal: #3CA8C2;
 $green: #7ABE4A;
-$gray: #B2B2B2;
+$gray: #E5E5E5;
 $darkgray: #555555;
+
+@mixin btnBorder() {
+  border: 1px solid $teal;
+  border-radius: 4px;
+  color: $teal;
+  padding: 8px;
+}
+
+@mixin rightHeaderItems() {
+  display: inline-block;
+  float: left;
+  height: 100%;
+  margin-top: 15px;
+}
+
+
+/* --------------- FULL SITE --------------- */
+
 
 body {
   background-color: #F5F5F1;
+
 }
 
-// .globalContainer {
-//   width: 100%;
-//   margin: auto;
-// }
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.globalContainer {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/* --------------- FULL HEADER --------------- */
+
 
 header {
-  // @include outer-container();
   width: 100%;
   background-color: white;
   box-shadow: 0px .1px 2px $darkgray;
   padding: 15px;
+  font-size: .9em;
 
   .headerContent {
     @include outer-container
   }
 
+
+  /* --------------- START LEFT HEADER --------------- */
+
+
   .leftHeader {
     float: left;
+
     .logo {
       display: inline-block;
-      img {
-        width: 80px;
-        }
+      color: $orange;
+      font-size: 45px;
+      font-family: 'Gentium Book Basic', serif;
+      margin-right: 10px;
     }
+
+    .search{
+      display: inline-block;
+    }
+
     .searchBar {
       display: inline-block;
       float: right;
       margin: auto;
+      padding: 12px;
+
+      input {
+        float: left;
+        padding: 8px;
+        margin: 0;
+        height: 100%;
+        border: 1px solid #CFCBC8;
+        box-shadow: inset 0 0 1px #CFCBC8;
+        border-radius: 4px 0px 0px 4px;
+      }
+
+      #searchBtn {
+        background-color: $teal;
+        @include btnBorder;
+        color: white;
+        border-radius: 0px 4px 4px 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      #searchBtn:hover {
+        background-color: $lightteal;
+      }
+
+      #browseBtn {
+        @include btnBorder;
+        background-color: white;
+        color: $darkgray;
+        border: $darkgray;
+        float: right;
+        margin-left: 20px;
+        padding: 10px;
+      }
+
     }
   }
 
+
+/* --------------- START RIGHT HEADER --------------- */
+
+
   .rightHeader {
     float: right;
-  }
+    color: $teal;
+    display: inline-block;
+
+    a {
+      color: $teal;
+    }
+
+    .register {
+      @include rightHeaderItems;
+      padding: 24px 10px 0px 0px;
+      margin-top: 0;
+    }
+
+    .signIn {
+      @include rightHeaderItems;
+      @include btnBorder;
+      margin-right: 15px;
+    }
+
+    .cart {
+      @include rightHeaderItems;
+      color: $darkgray;
+      padding-left: 15px;
+      margin-top: 24px;
+      border-left: 1px solid $gray;
+    }
+
+}
 
 }
 
@@ -61,7 +168,6 @@ header {
     height: 500px;
     background-color: white;
     @include span-columns(3);
-    margin-right: 0px;
   }
 
   .items {
@@ -72,6 +178,7 @@ header {
 
 ul {
   margin: 0 auto;
+  padding: 0px;
 }
 
 li {
