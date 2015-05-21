@@ -46,9 +46,25 @@ $bordergray: #E1E3DF;
   }
 
   .itemImage {
-    height: 150px;
-    // background-image: url('/images/coffee.png');
+    height: 170px;
+    background-image: url('images/coffee.png');
     overflow: hidden;
+
+    .icons {
+      float: right;
+      margin: 5px;
+
+      button {
+        background-color: white;
+        @include boxBorder;
+        height: 30px;
+        padding: 5px;
+      }
+
+      img {
+        height: 20px;
+      }
+    }
   }
 }
 
@@ -223,6 +239,8 @@ header {
 }
 
 ul {
+  margin: 0;
+  padding: 0;
 
 }
 
