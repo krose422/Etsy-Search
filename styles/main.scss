@@ -9,12 +9,17 @@ $lightteal: #3CA8C2;
 $green: #7ABE4A;
 $gray: #E5E5E5;
 $darkgray: #555555;
+$bordergray: #E1E3DF;
 
 @mixin btnBorder() {
   border: 1px solid $teal;
   border-radius: 4px;
   color: $teal;
   padding: 8px;
+}
+
+@mixin boxBorder() {
+  border: 1px solid $bordergray;
 }
 
 @mixin rightHeaderItems() {
@@ -24,6 +29,40 @@ $darkgray: #555555;
   margin-top: 15px;
 }
 
+@mixin itemBoxStyle() {
+  .itemTitle {
+    color: $darkgray;
+    padding-bottom: 8px;
+  }
+
+  .itemMaker {
+    color: $gray;
+    float: left;
+  }
+
+  .itemPrice {
+    color: $green;
+    float: right;
+  }
+
+  .itemImage {
+    height: 150px;
+    // background-image: url('/images/coffee.png');
+    overflow: hidden;
+  }
+}
+
+@mixin colorFilter() {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  @include boxBorder;
+}
+
+@mixin refineHeaders {
+  font-weight: bold;
+  color: $darkgray;
+}
 
 /* --------------- FULL SITE --------------- */
 
@@ -43,6 +82,10 @@ a:hover {
 
 .globalContainer {
   font-family: 'Roboto', sans-serif;
+}
+
+* {
+  border-sizing: border-box;
 }
 
 
@@ -159,17 +202,18 @@ header {
 }
 
 
-/* --------------- START MAIN HEAD INFO --------------- */
+/* --------------- START MAIN --------------- */
+
 
 .main {
   width: 980px;
   @include outer-container;
   clear: both;
   margin: 40px auto;
+  font-size: .8em;
 
   aside {
-    height: 500px;
-    background-color: white;
+    height: 100%;
     @include span-columns(3);
   }
 
@@ -191,7 +235,18 @@ li {
   @include span-columns(3 of 9);
   @include omega(3n);
   list-style: none;
+  border-radius: 4px;
+  @include boxBorder;
+}
 
+.itemBox {
+  @include itemBoxStyle;
+
+  .itemInfo {
+    height: 50px;
+
+    padding: 7px;
+  }
 }
 
 .mainHead {
@@ -233,9 +288,91 @@ li {
 
 }
 
+/* --------------- START SIDEBAR --------------- */
+
+.categories {
+  background-color: white;
+  padding: 10px 15px;
+  @include boxBorder;
 
 
+  p {
+    color: $darkgray;
+  }
 
+  .indent {
+    margin-left: 10px;
+    color: $teal;
+  }
+}
+
+.refineSearchHead {
+  @include refineHeaders;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.refineSearch {
+  background-color: white;
+  padding: 10px 15px;
+  @include boxBorder;
+
+  a {
+    width: 100%;
+    color: $teal;
+  }
+
+  .refineBox {
+    border-bottom: 1px solid $gray;
+    padding: 5px;
+
+    span {
+      @include refineHeaders;
+    }
+
+    .red {
+      @include colorFilter;
+      background-color: #F40B32;
+    }
+
+    .orange {
+      @include colorFilter;
+      background-color: #FF7F00;
+    }
+
+    .yellow {
+      @include colorFilter;
+      background-color: #F3CC0C;
+    }
+
+    .green {
+      @include colorFilter;
+      background-color: #0AC20A;
+    }
+
+    .blue {
+      @include colorFilter;
+      background-color: #0CCCF3;
+    }
+
+    .purple {
+      @include colorFilter;
+      background-color: #A60CF3;
+    }
+
+    .black {
+      @include colorFilter;
+      background-color: #000000;
+    }
+
+    .white {
+      @include colorFilter;
+      background-color: white;
+    }
+
+  }
+
+}
 
 
 
