@@ -223,13 +223,11 @@ header {
 }
 
 ul {
-  margin: 0 auto;
-  padding: 0px;
+
 }
 
 li {
   height: 220px;
-  margin-bottom: 20px;
   background-color: white;
   @include span-columns(3 of 9);
   @include omega(3n);
@@ -243,7 +241,6 @@ li {
 
   .itemInfo {
     height: 50px;
-
     padding: 7px;
   }
 }
