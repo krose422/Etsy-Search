@@ -136,8 +136,7 @@ header .rightHeader .cart {
 
 /* --------------- START MAIN --------------- */
 .main {
-  width: 980px;
-  max-width: 68em;
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
   clear: both;
@@ -174,7 +173,7 @@ ul {
   padding: 0px; }
 
 li {
-  height: 200px;
+  height: 220px;
   margin-bottom: 20px;
   background-color: white;
   float: left;
