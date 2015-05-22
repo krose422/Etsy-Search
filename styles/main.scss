@@ -36,9 +36,13 @@ $bordergray: #E5E5E5;
   }
 
   .itemMaker {
-    color: $gray;
     float: left;
     display: inline-block;
+
+    a {
+      color: $gray;
+    }
+
   }
 
   .itemPrice {
@@ -49,6 +53,46 @@ $bordergray: #E5E5E5;
   .itemImage {
     height: 170px;
     overflow: hidden;
+    position: relative;
+
+
+  &::before {
+    content: '';
+    background-image: url(../images/heart.png);
+    background-size: cover;
+    background-color: white;
+    border: .8px solid $gray;
+    border-radius: 4px;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 4px;
+    right: 35px;
+    visibility: hidden;
+  }
+
+  &::after {
+    content: '';
+    background-image: url(../images/hamburger.png);
+    background-size: cover;
+    background-color: white;
+    border: .8px solid $gray;
+    border-radius: 4px;
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 4px;
+    right: 4px;
+    visibility: hidden;
+  }
+
+  &:hover:before {
+    visibility: visible;
+  }
+
+  &:hover:after {
+    visibility: visible;
+  }
 
     .icons {
       float: right;
@@ -75,10 +119,14 @@ $bordergray: #E5E5E5;
   @include boxBorder;
 }
 
-@mixin refineHeaders {
+@mixin refineHeaders() {
   font-weight: bold;
   padding-bottom: 8px;
   color: $darkgray;
+}
+
+@mixin hoverBorder() {
+  border: 1px solid $gray;
 }
 
 /* --------------- FULL SITE --------------- */
@@ -95,6 +143,7 @@ a {
 
 a:hover {
   text-decoration: underline;
+  text-decoration-color: $teal;
 }
 
 .globalContainer {
@@ -105,6 +154,18 @@ a:hover {
   border-sizing: border-box;
 }
 
+button:focus {
+  outline: 0;
+}
+
+input:focus {
+  outline: 0;
+}
+
+select:focus {
+  outline: 0;
+}
+
 
 /* --------------- FULL HEADER --------------- */
 
@@ -113,7 +174,7 @@ header {
   width: 100%;
   background-color: white;
   box-shadow: 0px .1px 2px $darkgray;
-  padding: 15px;
+  padding: 10px;
   font-size: .9em;
 
   .headerContent {
@@ -155,31 +216,32 @@ header {
         border-radius: 4px 0px 0px 4px;
       }
 
-      #searchBtn {
+      .searchInput:hover {
+        border: 1px solid $gray;
+      }
+
+      .searchBtn {
         background-color: $teal;
         @include btnBorder;
         color: white;
         border-radius: 0px 4px 4px 0px;
         padding-left: 20px;
         padding-right: 20px;
+
       }
 
-      #searchBtn:hover {
-        background-color: $lightteal;
-      }
-
-      #browseBtn {
+      .browseBtn {
         @include btnBorder;
         background-color: white;
         color: $darkgray;
-        border: $gray;
+        border: 1px solid $bordergray;
         float: right;
         margin-left: 20px;
-        padding: 10px;
+        padding: 8px;
       }
 
-      #broseBtn:hover {
-        border: 1px solid red;
+      .browseBtn:hover {
+        @include hoverBorder;
       }
 
     }
@@ -208,6 +270,15 @@ header {
       @include rightHeaderItems;
       @include btnBorder;
       margin-right: 15px;
+
+      a:hover {
+        text-decoration: none;
+      }
+
+    }
+
+    .signIn:hover {
+      background-color: #F0FBFD;
     }
 
     .cart {
@@ -218,6 +289,10 @@ header {
       border-left: 1px solid $gray;
       font-size: .8em;
 
+      &:hover {
+        color: $darkgray;
+      }
+
       img {
         height: 22px;
         display: block;
@@ -226,7 +301,7 @@ header {
 
     }
 
-}
+  }
 
 }
 
@@ -257,7 +332,7 @@ ul {
 
 }
 
-li {
+.itemBox {
   height: 220px;
   background-color: white;
   @include span-columns(3 of 9);
@@ -344,6 +419,7 @@ li {
   .indent {
     margin-left: 10px;
     color: $teal;
+    list-style: none;
   }
 }
 
@@ -358,8 +434,51 @@ li {
   padding: 10px 15px;
   @include boxBorder;
 
+.typeOptions {
+
+  label {
+    position: relative;
+    margin-left: 0;
+  }
+
+  input {
+    position: absolute;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+  }
+
   a {
-    width: 100%;
+    margin-left: 32px;
+    margin-top: 8px;
+  }
+
+}
+
+.shopLocationRadio {
+
+  label {
+    position: relative;
+    margin-left: 0;
+  }
+
+  input {
+    position: absolute;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    vertical-align: middle;
+  }
+
+  a {
+    margin-left: 32px;
+    margin-top: 8px;
+  }
+
+}
+
+  a {
     color: $teal;
   }
 
@@ -386,6 +505,8 @@ li {
         border-top: 7px solid transparent;
         border-bottom: 7px solid transparent;
         border-left: 7px solid $darkgray;
+        margin-left: 11px;
+        margin-top: 7px;
       }
 
       .arrow-right:hover {
@@ -452,12 +573,21 @@ li {
     border-radius: 4px;
   }
 
-  .refinebox select:hover {
-    border: 1px solid $darkgray;
+  select:hover {
+    @include hoverBorder;
   }
 
 }
 
+.priceInputs {
+  input:hover {
+    @include hoverBorder;
+  }
+}
+
+.arrowBox:hover {
+  @include hoverBorder;
+}
 
 
 

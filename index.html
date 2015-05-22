@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="icon" type="image/ico" href="images/etsy.png" />
+  <meta charset="UTF-8">
   <title>coffee bar on Etsy, a global handmade and vintage marketplace.</title>
 
 <!-- <<<<<<<<<<<<<<< META TAGS >>>>>>>>>>>>>>> -->
@@ -38,10 +39,10 @@
 
         <div class="searchBar">
           <div class="search">
-            <input type="text" size="35" placeholder="Search for items or shops" />
-            <input type="submit" value="Search" id="searchBtn" />
+            <input type="text" class="searchInput" size="35" placeholder="Search for items or shops" />
+            <input type="submit" value="Search" class="searchBtn" />
           </div>
-          <input type="submit" value="Browse" id="browseBtn" />
+          <button class="browseBtn">Browse &#x25BE;</button>
 
         </div> <!-- end searchBar div -->
 
@@ -87,7 +88,7 @@
       </div> <!-- end resultsInfo -->
 
       <div class="sortBy">
-        Sort By: <span>Relevancy</span>
+        Sort By: <span>Relevancy &#x25BE;</span>
       </div> <!-- end sortBy -->
     </div> <!-- end mainInfo -->
 
@@ -99,18 +100,20 @@
 
     <div class="categories">
       <p class="allCat">All Categories</p>
-      <a href="#"> <p class="indent">Home &amp; Living</p></a>
-      <a href="#"> <p class="indent">Bath &amp; Beauty</p></a>
-      <a href="#"> <p class="indent">Paper &amp; Party Supplies</p></a>
-      <a href="#"> <p class="indent">Art &amp; Collectibles</p></a>
-      <a href="#"> <p class="indent">Weddings</p></a>
-      <a href="#"> <p class="indent">Craft Supplies &amp; Tools</p></a>
-      <a href="#"> <p class="indent">Jewelry</p></a>
-      <a href="#"> <p class="indent">Clothing</p></a>
-      <a href="#"> <p class="indent">Accessories</p></a>
-      <a href="#"> <p class="indent">Bags &amp; Purses</p></a>
-      <a href="#"> <p class="indent">Toys &amp; Games</p></a>
-      <a href="#"> <p class="indent">Books, Movies &amp; Music</p></a>
+      <ul id="categoryList">
+        <a href="#"> <p class="indent">Home &amp; Living</p></a>
+        <a href="#"> <p class="indent">Bath &amp; Beauty</p></a>
+        <a href="#"> <p class="indent">Paper &amp; Party Supplies</p></a>
+        <a href="#"> <p class="indent">Art &amp; Collectibles</p></a>
+        <a href="#"> <p class="indent">Weddings</p></a>
+        <a href="#"> <p class="indent">Craft Supplies &amp; Tools</p></a>
+        <a href="#"> <p class="indent">Jewelry</p></a>
+        <a href="#"> <p class="indent">Clothing</p></a>
+        <a href="#"> <p class="indent">Accessories</p></a>
+        <a href="#"> <p class="indent">Bags &amp; Purses</p></a>
+        <a href="#"> <p class="indent">Toys &amp; Games</p></a>
+        <a href="#"> <p class="indent">Books, Movies &amp; Music</p></a>
+      </ul>
     </div> <!-- end categories div -->
 
     <div class="refineSearchHead">
@@ -120,21 +123,42 @@
     <div class="refineSearch">
 
       <div class="refineBox">
-        <span>Item Type</span>
-          <a href="#"><p>All Items</p></a>
-          <a href="#"><p>Handmade</p></a>
-          <a href="#"><p>Vintage</p></a>
+        <div class="itemType">
+          <span>Item Type</span>
+            <div class="typeOptions">
+
+              <label class="radios">
+                <input type="radio" class="radio" value="All Items" checked="checked"></input>
+                <a href="#">All Items</a>
+              </label>
+              <br /><br />
+              <label class="radios">
+                <input type="radio" class="radio" value="Handmade"></input>
+                <a href="#">Handmade</a>
+              </label>
+              <br /><br />
+              <label class="radios">
+                <input type="radio" class="radio" value="Vintage"></input>
+                <a href="#">Vintage</a>
+
+              </label>
+            </div>
+        </div>
       </div>
 
       <div class="refineBox">
         <span>Price</span>
         <div class="priceInputs">
-        <input type="text" placeholder="Low" />
-        <span style="display: inline-block; margin-right: 8px;">to</span>
-        <input type="text" placeholder="High" />
-        <div class="arrowBox">
-        <div class="arrow-right"></div>
-        </div>
+
+          <input type="text" placeholder="Low" />
+
+          <span style="display: inline-block; margin-right: 8px;">to</span>
+
+          <input type="text" placeholder="High" />
+
+          <div class="arrowBox">
+            <div class="arrow-right"></div>
+          </div>
         </div>
       </div>
 
@@ -158,8 +182,18 @@
 
       <div class="refineBox">
         <span>Shop Location</span>
-        <a href="#"><p>Anywhere</p></a>
-        <a href="#"><p>United States</p></a>
+          <div class="shopLocationRadio">
+            <label class="radios">
+              <input type="radio" class="radio" value="All Items" checked="checked"></input>
+              <a href="#">Anywhere</a>
+            </label>
+            <br /><br />
+            <label class="radios">
+              <input type="radio" class="radio" value="Handmade"></input>
+              <a href="#">United States</a>
+            </label>
+            <br /><br />
+        </div>
         <a href="#"><p>Choose a custom location</p></a>
       </div>
 

@@ -15,7 +15,8 @@ a {
   text-decoration: none; }
 
 a:hover {
-  text-decoration: underline; }
+  text-decoration: underline;
+  text-decoration-color: #34A8C4; }
 
 .globalContainer {
   font-family: 'Roboto', sans-serif; }
@@ -23,12 +24,21 @@ a:hover {
 * {
   border-sizing: border-box; }
 
+button:focus {
+  outline: 0; }
+
+input:focus {
+  outline: 0; }
+
+select:focus {
+  outline: 0; }
+
 /* --------------- FULL HEADER --------------- */
 header {
   width: 100%;
   background-color: white;
   box-shadow: 0px 0.1px 2px #555555;
-  padding: 15px;
+  padding: 10px;
   font-size: .9em;
   /* --------------- START LEFT HEADER --------------- */
   /* --------------- START RIGHT HEADER --------------- */ }
@@ -71,7 +81,10 @@ header .leftHeader .searchBar input {
   box-shadow: inset 0 0 1px #CFCBC8;
   border-radius: 4px 0px 0px 4px; }
 
-header .leftHeader .searchBar #searchBtn {
+header .leftHeader .searchBar .searchInput:hover {
+  border: 1px solid #B2B2B2; }
+
+header .leftHeader .searchBar .searchBtn {
   background-color: #34A8C4;
   border: 1px solid #34A8C4;
   border-radius: 4px;
@@ -82,23 +95,20 @@ header .leftHeader .searchBar #searchBtn {
   padding-left: 20px;
   padding-right: 20px; }
 
-header .leftHeader .searchBar #searchBtn:hover {
-  background-color: #3CA8C2; }
-
-header .leftHeader .searchBar #browseBtn {
+header .leftHeader .searchBar .browseBtn {
   border: 1px solid #34A8C4;
   border-radius: 4px;
   color: #34A8C4;
   padding: 8px;
   background-color: white;
   color: #555555;
-  border: #B2B2B2;
+  border: 1px solid #E5E5E5;
   float: right;
   margin-left: 20px;
-  padding: 10px; }
+  padding: 8px; }
 
-header .leftHeader .searchBar #broseBtn:hover {
-  border: 1px solid red; }
+header .leftHeader .searchBar .browseBtn:hover {
+  border: 1px solid #B2B2B2; }
 
 header .rightHeader {
   float: right;
@@ -127,6 +137,12 @@ header .rightHeader .signIn {
   padding: 8px;
   margin-right: 15px; }
 
+header .rightHeader .signIn a:hover {
+  text-decoration: none; }
+
+header .rightHeader .signIn:hover {
+  background-color: #F0FBFD; }
+
 header .rightHeader .cart {
   display: inline-block;
   float: left;
@@ -137,6 +153,9 @@ header .rightHeader .cart {
   margin-top: 13px;
   border-left: 1px solid #B2B2B2;
   font-size: .8em; }
+
+header .rightHeader .cart:hover {
+  color: #555555; }
 
 header .rightHeader .cart img {
   height: 22px;
@@ -181,7 +200,7 @@ ul {
   margin: 0;
   padding: 0; }
 
-li {
+.itemBox {
   height: 220px;
   background-color: white;
   float: left;
@@ -192,16 +211,16 @@ li {
   border-radius: 4px;
   border: 1px solid #E5E5E5; }
 
-li:last-child {
+.itemBox:last-child {
   margin-right: 0; }
 
-li:nth-child(3n) {
+.itemBox:nth-child(3n) {
   margin-right: 0; }
 
-li:nth-child(3n+1) {
+.itemBox:nth-child(3n+1) {
   clear: left; }
 
-li img {
+.itemBox img {
   height: 180px; }
 
 .itemBox {
@@ -212,9 +231,11 @@ li img {
   padding-bottom: 8px; }
 
 .itemBox .itemMaker {
-  color: #B2B2B2;
   float: left;
   display: inline-block; }
+
+.itemBox .itemMaker a {
+  color: #B2B2B2; }
 
 .itemBox .itemPrice {
   color: #7ABE4A;
@@ -222,7 +243,42 @@ li img {
 
 .itemBox .itemImage {
   height: 170px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+
+.itemBox .itemImage::before {
+  content: '';
+  background-image: url(../images/heart.png);
+  background-size: cover;
+  background-color: white;
+  border: 0.8px solid #B2B2B2;
+  border-radius: 4px;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  top: 4px;
+  right: 35px;
+  visibility: hidden; }
+
+.itemBox .itemImage::after {
+  content: '';
+  background-image: url(../images/hamburger.png);
+  background-size: cover;
+  background-color: white;
+  border: 0.8px solid #B2B2B2;
+  border-radius: 4px;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  top: 4px;
+  right: 4px;
+  visibility: hidden; }
+
+.itemBox .itemImage:hover:before {
+  visibility: visible; }
+
+.itemBox .itemImage:hover:after {
+  visibility: visible; }
 
 .itemBox .itemImage .icons {
   float: right;
@@ -299,7 +355,8 @@ li img {
 
 .categories .indent {
   margin-left: 10px;
-  color: #34A8C4; }
+  color: #34A8C4;
+  list-style: none; }
 
 .refineSearchHead {
   font-weight: bold;
@@ -313,8 +370,37 @@ li img {
   padding: 10px 15px;
   border: 1px solid #E5E5E5; }
 
+.refineSearch .typeOptions label {
+  position: relative;
+  margin-left: 0; }
+
+.refineSearch .typeOptions input {
+  position: absolute;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: middle; }
+
+.refineSearch .typeOptions a {
+  margin-left: 32px;
+  margin-top: 8px; }
+
+.refineSearch .shopLocationRadio label {
+  position: relative;
+  margin-left: 0; }
+
+.refineSearch .shopLocationRadio input {
+  position: absolute;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  vertical-align: middle; }
+
+.refineSearch .shopLocationRadio a {
+  margin-left: 32px;
+  margin-top: 8px; }
+
 .refineSearch a {
-  width: 100%;
   color: #34A8C4; }
 
 .refineSearch .refineBox {
@@ -338,7 +424,9 @@ li img {
   height: 0;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
-  border-left: 7px solid #555555; }
+  border-left: 7px solid #555555;
+  margin-left: 11px;
+  margin-top: 7px; }
 
 .refineSearch .refineBox .arrowBox .arrow-right:hover {
   background-color: #F5F5F1; }
@@ -415,5 +503,11 @@ li img {
   background-color: white;
   border-radius: 4px; }
 
-.refineSearch .refinebox select:hover {
-  border: 1px solid #555555; }
+.refineSearch select:hover {
+  border: 1px solid #B2B2B2; }
+
+.priceInputs input:hover {
+  border: 1px solid #B2B2B2; }
+
+.arrowBox:hover {
+  border: 1px solid #B2B2B2; }
