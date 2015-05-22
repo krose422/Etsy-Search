@@ -28,13 +28,10 @@ var itemTitle,
 
   });
 
-// Drop search term into DOM
-
-var searchTerm = $('#searchTerm');
-var resultCount = $('#resultCount');
 
 // Drop result count into DOM
 
 $('#resultCount').html('(' + items.count + 'Results)');
+$('#searchTerm').html('"' + items.params.keywords + '"');
 
 });
