@@ -293,6 +293,20 @@ ul {
 .itemBox .itemImage .icons img {
   height: 20px; }
 
+.itemBox .outerShare {
+  position: absolute;
+  top: 5px;
+  right: 5px; }
+
+.itemBox .outerShare button {
+  background-color: white;
+  border: 1px solid #34A8C4;
+  border-radius: 4px;
+  color: #34A8C4;
+  padding: 8px;
+  height: 25px;
+  width: 30px; }
+
 .itemBox .itemInfo {
   height: 50px;
   padding: 7px; }

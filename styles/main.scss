@@ -110,7 +110,23 @@ $bordergray: #E5E5E5;
       }
     }
   }
+
+  .outerShare {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    button {
+      background-color: white;
+      @include btnBorder;
+      height: 25px;
+      width: 30px;
+    }
+  }
+
 }
+
+
 
 @mixin colorFilter() {
   display: inline-block;
