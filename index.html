@@ -150,11 +150,11 @@
         <span>Price</span>
         <div class="priceInputs">
 
-          <input type="text" placeholder="Low" />
+          <input class="priceInput" type="text" placeholder="Low" />
 
           <span style="display: inline-block; margin-right: 8px;">to</span>
 
-          <input type="text" placeholder="High" />
+          <input class="priceInput" type="text" placeholder="High" />
 
           <div class="arrowBox">
             <div class="arrow-right"></div>
@@ -176,8 +176,15 @@
 
       <div class="refineBox">
         <span>Ordering Options</span>
-        <a href="#"><p>Accepts Etsy Gift Cards</p></a>
-        <a href="#"><p>Customizable</p></a>
+        <label class="checkbox">
+        <input type="checkbox">
+        <a href="#">Accepts Etsy Gift Cards</a>
+        </label>
+        <br /><br />
+        <label class="checkbox">
+        <input type="checkbox">
+        <a href="#">Customizable</a>
+        </label>
       </div>
 
       <div class="refineBox">

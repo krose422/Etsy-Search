@@ -421,17 +421,21 @@ ul {
   border-bottom: 1px solid #E5E5E5;
   padding: 15px 1px; }
 
-.refineSearch .refineBox input {
+.refineSearch .refineBox .priceInput {
   height: 30px;
   width: 60px;
-  margin-right: 8px; }
+  margin-right: 8px;
+  border: none;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px; }
 
 .refineSearch .refineBox .arrowBox {
   height: 30px;
   width: 30px;
   border: 1px solid #E5E5E5;
   display: inline-block;
-  float: right; }
+  float: right;
+  border-radius: 4px; }
 
 .refineSearch .refineBox .arrowBox .arrow-right {
   width: 0;
@@ -456,6 +460,7 @@ ul {
   height: 20px;
   width: 20px;
   border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: #F40B32; }
 
 .refineSearch .refineBox .orange {
@@ -463,6 +468,7 @@ ul {
   height: 20px;
   width: 20px;
   border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: #FF7F00; }
 
 .refineSearch .refineBox .yellow {
@@ -470,6 +476,7 @@ ul {
   height: 20px;
   width: 20px;
   border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: #F3CC0C; }
 
 .refineSearch .refineBox .green {
@@ -477,6 +484,7 @@ ul {
   height: 20px;
   width: 20px;
   border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: #0AC20A; }
 
 .refineSearch .refineBox .blue {
@@ -484,6 +492,7 @@ ul {
   height: 20px;
   width: 20px;
   border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: #0CCCF3; }
 
 .refineSearch .refineBox .purple {
@@ -491,6 +500,7 @@ ul {
   height: 20px;
   width: 20px;
   border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: #A60CF3; }
 
 .refineSearch .refineBox .black {
@@ -498,6 +508,7 @@ ul {
   height: 20px;
   width: 20px;
   border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: #000000; }
 
 .refineSearch .refineBox .white {
@@ -505,6 +516,7 @@ ul {
   height: 20px;
   width: 20px;
   border: 1px solid #E5E5E5;
+  border-radius: 4px;
   background-color: white; }
 
 .refineSearch select {
@@ -525,3 +537,8 @@ ul {
 
 .arrowBox:hover {
   border: 1px solid #B2B2B2; }
+
+.checkbox input {
+  width: 20px;
+  padding: 0;
+  margin: 0; }

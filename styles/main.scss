@@ -133,6 +133,7 @@ $bordergray: #E5E5E5;
   height: 20px;
   width: 20px;
   @include boxBorder;
+  border-radius: 4px;
 }
 
 @mixin refineHeaders() {
@@ -502,10 +503,13 @@ ul {
     border-bottom: 1px solid $bordergray;
     padding: 15px 1px;
 
-    input {
+    .priceInput {
       height: 30px;
       width: 60px;
       margin-right: 8px;
+      border: none;
+      @include boxBorder;
+      border-radius: 4px;
     }
 
     .arrowBox {
@@ -514,6 +518,7 @@ ul {
       @include boxBorder;
       display: inline-block;
       float: right;
+      border-radius: 4px;
 
       .arrow-right {
         width: 0;
@@ -605,5 +610,14 @@ ul {
   @include hoverBorder;
 }
 
+.checkbox {
+
+  input {
+    width: 20px;
+    padding: 0;
+    margin: 0;
+  }
+
+}
 
 
