@@ -5,10 +5,8 @@ $(document).ready( function() {
 var itemList = $('#items');
 var itemTitle,
     itemPrice,
-    itemCurrency,
     itemImage,
-    itemMaker,
-    itemURL;
+    itemMaker;
 
 // Find each item property and put into the DOM
 
